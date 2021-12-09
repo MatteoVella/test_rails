@@ -1,0 +1,37 @@
+<%= form_with(model: informazioni) do |form| %>
+  <% if informazioni.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(informazioni.errors.count, "error") %> prohibited this informazioni from being saved:</h2>
+
+      <ul>
+        <% informazioni.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cognome %>
+    <%= form.text_field :cognome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Database persone scomparse</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cognome</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @informazionis.each do |informazioni| %>
+      <tr>
+        <td><%= informazioni.nome %></td>
+        <td><%= informazioni.cognome %></td>
+        <td><%= informazioni.email %></td>
+        <td><%= informazioni.telefono %></td>
+        <td><%= link_to 'Show', informazioni %></td>
+        <td><%= link_to 'Edit', edit_informazioni_path(informazioni) %></td>
+        <td><%= link_to 'Destroy', informazioni, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Informazioni', new_informazioni_path %>
